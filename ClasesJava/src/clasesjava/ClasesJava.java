@@ -75,7 +75,7 @@ int C_Jub=0;
     }
     public static void EliminarElemeto(Persona[] Lista,int Pos){
             Persona[]ClonePersonas=new Persona[Lista.length - 1];
-            
+            //Copia todos los elementos desde el inicio y la cantidad que coincide con la posicion
             System.arraycopy(Lista, 0, ClonePersonas, 0, Pos);
             System.arraycopy(Lista, Pos +1 , ClonePersonas, Pos, (Lista.length -Pos-1));
             System.out.println(Arrays.toString(ClonePersonas));
@@ -83,7 +83,19 @@ int C_Jub=0;
 
 
     }
-   
+   //Crear dos arrays de 10 elementos c/u , el primero : nombres, segundo:notas, cositas: 
+    //1-Un listado con los nombres y notas de los alumnos
+    //2-Ver el listado ordenado por nombres
+    //3.-Otro listado ordenado de manera descendente por las notas
+    //4-Copa de solo aprobados y solo suspensos
+    //5.-Metodo que me permita insertar ,eliminar y editar el alumno y/o nota
+    //6.-Generar una clase con el resultado final, con dos atributos : nombre y nota en donde creemos los objetos del array que tengamos
+    
+
+ 
+
+    public ClasesJava() {
+    }
     public static void main(String[] args) {
         //Ejercicio();
         Ejercicio();
