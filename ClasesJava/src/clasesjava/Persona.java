@@ -120,7 +120,7 @@ public class Persona {
 
     @Override
     public String toString() {
-        return "Persona{" + "nombre=" + nombre + ", apellido=" + apellido + ", genero=" + genero + ", edad=" + edad + ", Jubilar=" + Jubilar + ", Gustos=" + Gustos + '}';
+        return "\nPersona{ \n" + "nombre=" + nombre + ",\n apellido=" + apellido + ",\n genero=" + genero + ", \n edad=" + edad + ", \nJubilar=" + Jubilar + ",\n Gustos=" + Gustos + "}\n";
     }
 
    
