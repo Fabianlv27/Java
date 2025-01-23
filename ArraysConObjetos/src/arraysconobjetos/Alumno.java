@@ -34,7 +34,7 @@ this.Nota=Nota;
 }
     @Override
     public String toString() {
-        return "Alumno{" + "Nombre=" + Nombre + ", Nota=" + Nota + '}';
+        return "\nAlumno{" + "\nNombre:" + Nombre + ",\n Nota:" + Nota + "\n}\n";
     }
     
 }
