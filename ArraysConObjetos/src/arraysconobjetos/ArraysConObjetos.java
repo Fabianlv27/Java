@@ -31,11 +31,13 @@ public class ArraysConObjetos {
         for (int i = 0; i <Notas.length; i++) {
             Notas[i]=alea(0, 9);
         }
-        
+        //Listado
         for (int i = 0; i < Notas.length; i++) {
             System.out.print("Alumno: " + Nombres[i]);
             System.out.print("\t Nota: " + Notas[i]+"\n");
         }
+//Listado Ordenado
+
 
     }
     public static void main(String[] args) {
