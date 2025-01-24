@@ -33,18 +33,19 @@ public class ArraysConObjetos {
     }
 
     public static void RellenarArray(int[] Lista) {
-        boolean isEmpty=false;
+        boolean isEmpty=true;
         for(int numero:Lista){
             if (numero!=0) {
-                isEmpty=true;
+                isEmpty=false;
             }
         }
         if (isEmpty) {
                for (int i = 0; i < Lista.length; i++) {
             Lista[i] = alea(0, 9);
-        } 
         }
-    
+             
+        }
+      System.out.println(Arrays.toString(Lista));
 
     }
 
@@ -140,14 +141,6 @@ public class ArraysConObjetos {
 
         RellenarArray(Notas);
         Vizualizar(Notas, Nombres);
-        //
-
-        //AprobadosOnly
-        //  Vizualizar(Notas, Nombres);
-        //InsertarElemento(Nombres, Notas);
-        //EliminarElemento(Nombres, Notas);
-        //Editar(Nombres);
-       // CreateAlumnos(Nombres, Notas);
     }
 
     public static void OrderByName() {
@@ -155,9 +148,7 @@ public class ArraysConObjetos {
         RellenarArray(Notas);
         Vizualizar(Notas, Nombres);
         int C_Movimientos = 0;
-        //Arrays.sort(Nombres);
-        //Vizualizar(Notas, Nombres);
-        //Metodo Burbuja
+
         for (boolean ordenado = false; !ordenado;) {
             for (int i = 0; i < Nombres.length-1; i++) {
                 C_Movimientos = 0;
@@ -230,36 +221,45 @@ public class ArraysConObjetos {
 
     public static void InsertarElemento() {
         String Nombre;
-        int Numero;
-        int Choise = Choise();
+        int Nota;
+        int Pos;
+
         RellenarArray(Notas);
 
-        if (Choise == 0) {
+            System.out.println("Notas Rellenadas: " + Arrays.toString(Notas));
+
 
             System.out.println("Insertar un Nombre");
             Nombre = dato.next();
-
+             System.out.println("Insertar la Nota");
+            Nota = dato.nextInt();
+            System.out.println("Insertar una posicion");
+            Pos= dato.nextInt();
+           
+            
             //Creamos una copia del array
             String[] NewNombreArr = new String[Nombres.length + 1];
             //Colocamos el nombre en la ultima posicion en el nuevo array
-            NewNombreArr[NewNombreArr.length - 1] = Nombre;
+            NewNombreArr[Pos] = Nombre;
             //Copiamos los elementos del array original al nuevo
-            System.arraycopy(Nombres, 0, NewNombreArr, 0, Nombres.length);
-            //Mostrar
-            System.out.println("Array con nuevo nombre: " + Arrays.toString(NewNombreArr));
+            System.arraycopy(Nombres, 0, NewNombreArr, 0, Pos);
+            System.arraycopy(Nombres, Pos, NewNombreArr, Pos+1, NewNombreArr.length-Pos-1);
+            
 
-        } else {
-            System.out.println("Insertar la Posicion");
-            Numero = dato.nextInt();
+
+
+            
             int[] NewNotasArr = new int[Notas.length + 1];
-
-            System.arraycopy(Notas, 0, NewNotasArr, 0, Notas.length);
-
-            NewNotasArr[NewNotasArr.length - 1] = Numero;
+            NewNotasArr[Pos] = Nota;
+            System.arraycopy(Notas, 0, NewNotasArr, 0, Pos);
+            System.arraycopy(Notas, Pos, NewNotasArr, Pos +1,NewNotasArr.length-Pos-1);
+        
 
             //System.out.println("Array de nombres: " + Arrays.toString(Nombres));
+                        //Mostrar
+            System.out.println("Array con nuevo nombre: " + Arrays.toString(NewNombreArr));
             System.out.println("Array de notas actualizado: " + Arrays.toString(NewNotasArr));
-        }
+        
 
     }
 
