@@ -5,6 +5,13 @@
 package metodosstring;
 
 import java.util.Arrays;
+//Introducir dos cadenas de texto,se pide:introdicir una palabra e indicar cuantas veces aparece en la primera cadena,
+//2.-Mostrar los caracteres impares de la primera cadena
+//3.-Que cadena tiene mas palabras.
+//4.-Indicar alfabeticamente cual es la primera cadena
+//5.-Poner en la segunda cadena las plabras impares en mayuscula.
+
+//Meter el numero de DNI y comprobar si la letra esta bien, divider los numeros entre 23 y el resto lo comparamos con una tabla que esta en internet.
 
 /**
  *
@@ -23,7 +30,7 @@ public class MetodosString {
         
         System.out.println("CharAt(1): " + Cadena.charAt(1));
         
-        System.out.println("IndexOf(\"e\"): "+ Cadena.indexOf("e"));
+        System.out.println("IndexOf(\"e\"): "+ Cadena.indexOf("hsjdhjdf"));
         
         System.out.println(" Segunda coincidencia de e : IndexOf(\"e\",cadena.indexOf(\"e\")+1): "+ Cadena.indexOf("e",Cadena.indexOf("e")+1));
         
@@ -52,6 +59,11 @@ public class MetodosString {
         System.out.println("Cadena.substring(1,6): " + Cadena.substring(1,6));
         
         System.out.println("Cadena.toCharArray(): " + Arrays.toString(Cadena.toCharArray()) );
+        
+        System.out.println("Cadena.toLowerCase(): "+ Cadena.toLowerCase());
+        
+        System.out.println("Cadena.toUpperCase()"+ Cadena.toUpperCase());
+        
         
     }
     
