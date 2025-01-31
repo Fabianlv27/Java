@@ -48,7 +48,7 @@ public class EjerciciodelMoodle {
                 Pos=i;
             }
         }
-        System.out.println("El menor es --> "+ Min+" y si posicion es: " + Pos);
+        System.out.println("El menor es --> "+ Min+" y su posicion es: " + Pos);
         
         for (int i = 0; i <TbNumeros.length; i++) {
             TNum+=TbNumeros[i];
