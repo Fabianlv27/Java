@@ -4,6 +4,8 @@
  */
 package empresas;
 
+import java.util.Arrays;
+
 /**
  *
  * @author CEEP
@@ -82,9 +84,9 @@ public class Empleado {
     }
     
     public Empleado(String NombreCompleto,int Dni,int Año,String Sede,String Departamento,int Reduccion){
-    
+        System.out.println(NombreCompleto);
         String[] NombreSeparado=NombreCompleto.split(" ");
-        
+        System.out.println(Arrays.toString(NombreSeparado));
         this.Name=NombreSeparado[0];
         this.PrimerApellido=NombreSeparado[1];
         this.SegundoApellido=NombreSeparado[2];
@@ -105,7 +107,7 @@ public class Empleado {
 
     @Override
     public String toString() {
-        return "Empleado{\b" + "Dni=" + Dni + ",\b Name=" + Name + ",\b PrimerApellido=" + PrimerApellido + ", \bSegundoApellido=" + SegundoApellido + ", \nA\u00f1o=" + Año + ",\n ReduccionJornada=" + ReduccionJornada + ",\nSede=" + Sede + ",\n Departamento=" + Departamento + '}';
+        return "\n{" + "\nDni=" + Dni + ",\n Name=" + Name + ",\n PrimerApellido=" + PrimerApellido + ", \nSegundoApellido=" + SegundoApellido + ", \nA\u00f1o=" + Año + ",\n ReduccionJornada=" + ReduccionJornada + ",\nSede=" + Sede + ",\n Departamento=" + Departamento + "\n}\n";
     }
 
 }

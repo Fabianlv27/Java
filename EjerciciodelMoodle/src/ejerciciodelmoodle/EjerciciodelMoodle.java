@@ -20,6 +20,13 @@ public class EjerciciodelMoodle {
     /**
      * @param args the command line arguments
      */
+    public static void Inverse(int[] Table) {
+        int[] TInverse=new int[Table.length];
+        for (int i = 0; i < TInverse.length; i++) {
+           TInverse[i]=Table[Table.length-1-i];
+        }
+        System.out.println(Arrays.toString(TInverse));
+    }
     public static void main(String[] args) {
         
         // TODO code application logic here
@@ -27,12 +34,14 @@ public class EjerciciodelMoodle {
         int Min=100;
         int Pos=0;
         double TNum=0;
-       int[] TbNumeros=new int[100] ;
+       int[] TbNumeros=new int[5] ;
         for (int i = 0; i < TbNumeros.length; i++) {
             
-           TbNumeros[i]=alea(1, 99);
+           TbNumeros[i]=alea(1, 10);
                  
         }
+        System.out.println(Arrays.toString(TbNumeros));
+        Inverse(TbNumeros);
         
         for (int i = 0; i <TbNumeros.length; i++) {
             if (TbNumeros[i]>=Max) {
