@@ -32,15 +32,8 @@ public class Empresas {
      * @param args the command line arguments
      */
     public static void AñadirUsuario(){
-        
-    }
-    
-    public static void main(String[] args) {
-        // TODO code application logic here
-
-        
-        System.out.println("Ingrese el nombre Completo: ");
-       // dato.nextLine();
+    System.out.println("Ingrese el nombre Completo: ");
+        dato.nextLine();
         String Nombre=dato.nextLine();
         System.out.println("Ingrese el DNI: ");
         int Dni=dato.nextInt();
@@ -65,6 +58,23 @@ public class Empresas {
             }
 
             System.out.println(Arrays.toString(Empleados));
+ 
+    }
+    
+    public static void main(String[] args) {
+        // TODO code application logic here
+     int Option=-1;
+        while (Option!=0) {
+        System.out.println("Desea Agregar un Nuevo Usuario?: \n-(1)Si \n -(0)No\n");
+         Option=dato.nextInt();
+            if (Option==0) {
+                break;
+            }
+        AñadirUsuario();
+            
+        }
+        
+       
         
     }
     
