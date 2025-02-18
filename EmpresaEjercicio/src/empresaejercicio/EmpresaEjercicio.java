@@ -36,7 +36,7 @@ public class EmpresaEjercicio {
             System.out.println("    GESTOR DE EMPLEADOS        ");
             System.out.println("╚════════════════════════════════╝");
 
-            System.out.println("  ☆ Elige una sede. ☆");
+            System.out.println("  ☆Elige una sede. ☆");
             System.out.println("1. MADRID");
             System.out.println("2. BARCELONA");
             System.out.println("3. VALENCIA");
@@ -78,7 +78,7 @@ public class EmpresaEjercicio {
         
         
         
-    }
+    }  
     
     public static void menu_departamento(Sede[] sedes, int opc_sede){
         Scanner w = new Scanner(System.in);
@@ -182,6 +182,8 @@ public class EmpresaEjercicio {
         else{
            System.exit(0);
         }
+        
+        
         
     }
     
