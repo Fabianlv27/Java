@@ -81,6 +81,7 @@ public class DosDimencionesEjercicios {
     }
 
     public static void RellenarTDNI(String[] tbDNI) {
+        
         tbDNI[0] = "T";
         tbDNI[1] = "R";
         tbDNI[2] = "W";
@@ -104,7 +105,7 @@ public class DosDimencionesEjercicios {
         tbDNI[20] = "C";
         tbDNI[21] = "K";
         tbDNI[22] = "E";
-
+        
     }
 
     public static void NombresViz() {
