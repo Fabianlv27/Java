@@ -10,7 +10,7 @@ import java.util.Objects;
  *
  * @author CEEP
  */
-public class Alumno {
+public class Alumno implements Comparable<Alumno>{
   private String Nombre;
     private String Apellido1;
     private String Apellido2;
@@ -93,6 +93,12 @@ public class Alumno {
         }
         return Objects.equals(this.Nacionalidad, other.Nacionalidad);
     }
-    
+    @Override
+    public int compareTo(Alumno itr){
+    String comp=this.Apellido1+this.Apellido2+this.Nombre+this.Nacionalidad;
+    String otroComp=itr.Apellido1+itr.Apellido2+itr.Nombre+itr.Nacionalidad;
+    int comparacion= comp.compareTo(otroComp);
+    return comparacion;
+    }
       
 }

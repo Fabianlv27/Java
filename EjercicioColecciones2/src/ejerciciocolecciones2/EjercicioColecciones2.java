@@ -7,6 +7,8 @@ package ejerciciocolecciones2;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.Scanner;
+import java.util.Set;
+import java.util.TreeSet;
 
 /**
  *
@@ -44,22 +46,40 @@ public class EjercicioColecciones2 {
             a.Show();
         }
     }
+public static void Tree(){
+Set <Alumno> Alumnos =new TreeSet<>(Comparator.comparing(Alumno :: getNombre));
 
+            Alumnos.add(new Alumno("Fabian", "Luna", "Vicente", "Peru"));
+            Alumnos.add(new Alumno("Fabian", "Luna", "Vicente", "Paraguay"));
+            Alumnos.add(new Alumno("Roy", "Rebuffo", "Tabac", "Argentina"));
+            Alumnos.add(new Alumno("Mar", "Clara", "Gomez", "España"));
+            Alumnos.add(new Alumno("Rafael", "Gonz", "Pala", "Peru"));
+            
+            
+            for (Alumno a : Alumnos) {
+        a.Show();
+    }
+            
+}
     public static void AList(int CantAlumnos) {
+        System.out.println("*****ArrayList*******");
+        System.out.println("*****Aqui puedes colocar Alumnos iguales*******");
 
         ArrayList<Alumno> Alumnos = new ArrayList<>();
 
-        Alumnos.add(new Alumno("Fabian", "Luna", "Vicente", "Peru"));
-        Alumnos.add(new Alumno("Leo", "Paredez", "Fleitas", "Paraguay"));
-        Alumnos.add(new Alumno("Roy", "Rebuffo", "Tabac", "Argentina"));
-        Alumnos.add(new Alumno("Mar", "Clara", "Gomez", "España"));
-        Alumnos.add(new Alumno("Rafael", "Gonz", "Pala", "Peru"));
 
+            Alumnos.add(new Alumno("Fabian", "Luna", "Vicente", "Peru"));
+            Alumnos.add(new Alumno("Fabian", "Luna", "Vicente", "Paraguay"));
+            Alumnos.add(new Alumno("Roy", "Rebuffo", "Tabac", "Argentina"));
+            Alumnos.add(new Alumno("Mar", "Clara", "Gomez", "España"));
+            Alumnos.add(new Alumno("Rafael", "Gonz", "Pala", "Peru"));
+   
         Alumnos.sort(Comparator.comparing(Alumno::getNombre).
-                thenComparing(Alumno ::getApellido1)
-                .thenComparing(Alumno ::getApellido2)
+                thenComparing(Alumno::getApellido1)
+                .thenComparing(Alumno::getApellido2).thenComparing(Alumno :: getNacionalidad)
         );
         Vizualizar(Alumnos);
+        
         //  for (int i = 0; i < CantAlumnos; i++) {
         //    Alumnos.add(CrearAlumno(i));
 
@@ -81,6 +101,8 @@ public class EjercicioColecciones2 {
 
             if (Coleccion == 1) {
                 AList(CantAlumnos);
+            }else{
+                Tree();
             }
 
         }
