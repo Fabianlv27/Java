@@ -46,43 +46,48 @@ public class EjercicioColecciones2 {
             a.Show();
         }
     }
-public static void Tree(){
-Set <Alumno> Alumnos =new TreeSet<>(Comparator.comparing(Alumno :: getNombre));
 
-            Alumnos.add(new Alumno("Fabian", "Luna", "Vicente", "Peru"));
-            Alumnos.add(new Alumno("Fabian", "Luna", "Vicente", "Paraguay"));
-            Alumnos.add(new Alumno("Roy", "Rebuffo", "Tabac", "Argentina"));
-            Alumnos.add(new Alumno("Mar", "Clara", "Gomez", "España"));
-            Alumnos.add(new Alumno("Rafael", "Gonz", "Pala", "Peru"));
-            
-            
-            for (Alumno a : Alumnos) {
-        a.Show();
+    public static void Tree() {
+        Set<Alumno> Alumnos = new TreeSet<>(Comparator.comparing(Alumno::getNombre));
+
+        Alumnos.add(new Alumno("Fabian", "Luna", "Vicente", "Peru"));
+        Alumnos.add(new Alumno("Fabian", "Luna", "Vicente", "Paraguay"));
+        Alumnos.add(new Alumno("Roy", "Rebuffo", "Tabac", "Argentina"));
+        Alumnos.add(new Alumno("Mar", "Clara", "Gomez", "España"));
+        Alumnos.add(new Alumno("Rafael", "Gonz", "Pala", "Peru"));
+
+        for (Alumno a : Alumnos) {
+            a.Show();
+        }
+        TreeSet<Integer> numbers=new TreeSet<>();
+        numbers.add(6);
+        numbers.add(3);
+        numbers.add(2);
+        Integer ceilingValue = numbers.ceiling(3);
+        System.out.println("ceiling: "+ceilingValue );
+
     }
-            
-}
+
     public static void AList(int CantAlumnos) {
         System.out.println("*****ArrayList*******");
         System.out.println("*****Aqui puedes colocar Alumnos iguales*******");
 
         ArrayList<Alumno> Alumnos = new ArrayList<>();
 
+        Alumnos.add(new Alumno("Fabian", "Luna", "Vicente", "Peru"));
+        Alumnos.add(new Alumno("Fabian", "Luna", "Vicente", "Paraguay"));
+        Alumnos.add(new Alumno("Roy", "Rebuffo", "Tabac", "Argentina"));
+        Alumnos.add(new Alumno("Mar", "Clara", "Gomez", "España"));
+        Alumnos.add(new Alumno("Rafael", "Gonz", "Pala", "Peru"));
 
-            Alumnos.add(new Alumno("Fabian", "Luna", "Vicente", "Peru"));
-            Alumnos.add(new Alumno("Fabian", "Luna", "Vicente", "Paraguay"));
-            Alumnos.add(new Alumno("Roy", "Rebuffo", "Tabac", "Argentina"));
-            Alumnos.add(new Alumno("Mar", "Clara", "Gomez", "España"));
-            Alumnos.add(new Alumno("Rafael", "Gonz", "Pala", "Peru"));
-   
         Alumnos.sort(Comparator.comparing(Alumno::getNombre).
                 thenComparing(Alumno::getApellido1)
-                .thenComparing(Alumno::getApellido2).thenComparing(Alumno :: getNacionalidad)
+                .thenComparing(Alumno::getApellido2).thenComparing(Alumno::getNacionalidad)
         );
         Vizualizar(Alumnos);
-        
+
         //  for (int i = 0; i < CantAlumnos; i++) {
         //    Alumnos.add(CrearAlumno(i));
-
         //  }
     }
 
@@ -101,7 +106,7 @@ Set <Alumno> Alumnos =new TreeSet<>(Comparator.comparing(Alumno :: getNombre));
 
             if (Coleccion == 1) {
                 AList(CantAlumnos);
-            }else{
+            } else {
                 Tree();
             }
 
