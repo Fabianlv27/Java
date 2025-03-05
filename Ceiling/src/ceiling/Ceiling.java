@@ -4,6 +4,7 @@
  */
 package ceiling;
 
+import java.util.Comparator;
 import java.util.Iterator;
 import java.util.TreeSet;
 
@@ -49,6 +50,20 @@ public class Ceiling {
         for (Integer n : numbers) {
             System.out.print("\t"+ n);
         }
+        TreeSet<Personas>Alumnos=new TreeSet<>(Comparator.comparing(Personas::getNombre)
+        .thenComparing(Personas::getApellido).thenComparing(Personas::getEdad));
+        
+        Alumnos.add(new Personas("Fabian","Luna",18));
+        Alumnos.add(new Personas("Luis","Miguel",30));
+        Alumnos.add(new Personas("Luis","Gabriel",18));
+        Iterator<Personas> Pitr=Alumnos.iterator();
+        
+        while (Pitr.hasNext()) {
+            Personas next = Pitr.next();
+            System.out.println(next);
+         
+        }
+        
     }
     
 }
