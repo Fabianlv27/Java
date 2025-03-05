@@ -24,7 +24,7 @@ public class EjercicioColecciones2 {
 
     public static Alumno CrearAlumno(int i) {
 
-        System.out.println("|------------------Alumno " + i + " ---------------------|");
+        System.out.println("|------------------Alumno " + (i+1) + " ---------------------|");
         System.out.println("Nombre: ");
         Nombre = dato.next();
         System.out.println("Apellido 1");
@@ -37,36 +37,40 @@ public class EjercicioColecciones2 {
         return new Alumno(Nombre, Apellido1, Apellido2, Nacionalidad);
 
     }
+    
 
     public static void Vizualizar(ArrayList<Alumno> Alumnos) {
+            System.out.println("------------------------------------------------------------------------------------");
 
-        System.out.print("[Nombre]\t[Apellido1]\t[Apellido2]\t[Nacionalidad]\n");
+        System.out.print("[Nombre]\t\t[Apellido1]\t[Apellido2]\t[Nacionalidad]\n");
 
         for (Alumno a : Alumnos) {
             a.Show();
         }
     }
 
-    public static void Tree() {
-        Set<Alumno> Alumnos = new TreeSet<>(Comparator.comparing(Alumno::getNombre));
+public static void Tree(int cantidad){
+Set <Alumno> Alumnos =new TreeSet<>(Comparator.comparing(Alumno :: getNombre));
 
-        Alumnos.add(new Alumno("Fabian", "Luna", "Vicente", "Peru"));
-        Alumnos.add(new Alumno("Fabian", "Luna", "Vicente", "Paraguay"));
-        Alumnos.add(new Alumno("Roy", "Rebuffo", "Tabac", "Argentina"));
-        Alumnos.add(new Alumno("Mar", "Clara", "Gomez", "España"));
-        Alumnos.add(new Alumno("Rafael", "Gonz", "Pala", "Peru"));
-
-        for (Alumno a : Alumnos) {
-            a.Show();
-        }
-        TreeSet<Integer> numbers=new TreeSet<>();
-        numbers.add(6);
-        numbers.add(3);
-        numbers.add(2);
-        Integer ceilingValue = numbers.ceiling(3);
-        System.out.println("ceiling: "+ceilingValue );
+        /*    Alumnos.add(new Alumno("Fabian", "Luna", "Vicente", "Peru"));
+            Alumnos.add(new Alumno("Fabian", "Luna", "Vicente", "Paraguay"));
+            Alumnos.add(new Alumno("Roy", "Rebuffo", "Tabac", "Argentina"));
+            Alumnos.add(new Alumno("Mar", "Clara", "Gomez", "España"));
+            Alumnos.add(new Alumno("Rafael", "Gonz", "Pala", "Peru"));
+        */    
+            for (int i = 0; i < cantidad; i++) {
+        Alumnos.add(CrearAlumno(i));
+        
+    }
+            System.out.println("------------------------------------------------------------------------------------");
+          System.out.print("[Nombre]\t\t[Apellido1]\t[Apellido2]\t[Nacionalidad]\n");
+ 
+            for (Alumno a : Alumnos) {
+        a.Show();
 
     }
+            
+}
 
     public static void AList(int CantAlumnos) {
         System.out.println("*****ArrayList*******");
@@ -74,21 +78,28 @@ public class EjercicioColecciones2 {
 
         ArrayList<Alumno> Alumnos = new ArrayList<>();
 
-        Alumnos.add(new Alumno("Fabian", "Luna", "Vicente", "Peru"));
-        Alumnos.add(new Alumno("Fabian", "Luna", "Vicente", "Paraguay"));
-        Alumnos.add(new Alumno("Roy", "Rebuffo", "Tabac", "Argentina"));
-        Alumnos.add(new Alumno("Mar", "Clara", "Gomez", "España"));
-        Alumnos.add(new Alumno("Rafael", "Gonz", "Pala", "Peru"));
+   
+          /*  Alumnos.add(new Alumno("Fabian", "Luna", "Vicente", "Peru"));
+            Alumnos.add(new Alumno("Fabian", "Luna", "Vicente", "Paraguay"));
+            Alumnos.add(new Alumno("Roy", "Rebuffo", "Tabac", "Argentina"));
+            Alumnos.add(new Alumno("Mar", "Clara", "Gomez", "España"));
+            Alumnos.add(new Alumno("Rafael", "Gonz", "Pala", "Peru"));
+   */
+        
+       
+        
+         for (int i = 0; i < CantAlumnos; i++) {
+          Alumnos.add(CrearAlumno(i));
+
+          }
 
         Alumnos.sort(Comparator.comparing(Alumno::getNombre).
                 thenComparing(Alumno::getApellido1)
                 .thenComparing(Alumno::getApellido2).thenComparing(Alumno::getNacionalidad)
         );
-        Vizualizar(Alumnos);
 
-        //  for (int i = 0; i < CantAlumnos; i++) {
-        //    Alumnos.add(CrearAlumno(i));
-        //  }
+         Vizualizar(Alumnos);
+
     }
 
     public static void menu() {
@@ -101,15 +112,21 @@ public class EjercicioColecciones2 {
             System.out.println("(2)Treeset");
             System.out.println("(0)Salir");
             Coleccion = dato.nextInt();
-            System.out.println("Cuantos Alumnos quieres agregar?");
+            if (Coleccion!=0) {
+                
+                System.out.println("Cuantos Alumnos quieres agregar?");
             int CantAlumnos = dato.nextInt();
-
-            if (Coleccion == 1) {
+             if (Coleccion == 1) {
                 AList(CantAlumnos);
-            } else {
-                Tree();
-            }
 
+            }else{
+                Tree(CantAlumnos);
+
+            }
+            }
+            
+
+           
         }
 
     }
